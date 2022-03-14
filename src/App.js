@@ -7,7 +7,7 @@ import csvfile from "./covid19vaccinesbycounty.csv"
 
 
 function downloadURI(uri) {
-  fetch("http://localhost:27017/fetchCsv");
+  fetch("/fetchCsv");
 }
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     return (
       <div>
         <h1 style={{alignItems:"center"}}>California vaccination data</h1>
-        <button class="button" onClick={()=>downloadURI()}>Refresh Data</button>
+        <button className="button" onClick={()=>downloadURI()}>Refresh Data</button>
         <MapChart setTooltipContent={setContent} csvfile={csvfile}/>
         <ReactTooltip multiline={true} className="tooltip">{content}</ReactTooltip>
       </div>
